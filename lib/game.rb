@@ -1,7 +1,7 @@
 require_relative '..\lib\player.rb'
 require_relative '..\lib\board.rb'
 class Game
-  attr_reader :player1, :player2, :board, :turn, :result_combinations
+  attr_reader :player1, :player2, :board
   def initialize(player1, player2, board)
     @player1 = player1
     @player2 = player2
@@ -13,8 +13,8 @@ class Game
   end
   def game_start
     until (winner? || board.full?)
-      turn == 1 ? play(player1) : play(player2)
-      turn = turn == 1 ? 0 : 1
+      @turn == 1 ? play(player1) : play(player2)
+      @turn = @turn == 1 ? 0 : 1
     end
     game_end
   end
@@ -32,7 +32,7 @@ class Game
   def winner?
     players = [player1, player2]
     players.each do |player|
-      result_combinations.each do |combo|
+      @result_combinations.each do |combo|
         return player.name if win?(player,combo)
       end
     end

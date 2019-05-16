@@ -5,7 +5,13 @@ class Board
     @environ = environ
   end
 
-  include UserInterface
+  def display_board
+    "  #{environ[6]} | #{environ[7]} | #{environ[8]}\n"+
+    " ---|---|---\n"+
+    "  #{environ[3]} | #{environ[4]} | #{environ[5]}\n"+
+    " ---|---|---\n"+
+    "  #{environ[0]} | #{environ[1]} | #{environ[2]}"
+  end
   def full?
     environ.all? { |a| a.is_a?(String) }
   end

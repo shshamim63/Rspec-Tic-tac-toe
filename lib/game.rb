@@ -21,10 +21,10 @@ class Game
 
   def game_end
     if winner?
-      board.display_board
+      puts board.display_board
       puts "Winner is: #{winner?}"
     elsif board.full?
-      board.display_board
+      puts board.display_board
       puts 'It is a tie'
     end
   end
@@ -45,8 +45,8 @@ class Game
 
   def play(player)
     loop do
-      board.display_board
-      valid_move = player.move(board)
+      puts board.display_board
+      valid_move = player.move(player,board)
       next unless valid_move
 
       board.fill(valid_move-1, player.icon)

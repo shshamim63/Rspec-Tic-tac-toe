@@ -1,4 +1,4 @@
-require_relative '..\lib\module_ui.rb'
+require_relative '../lib/module_ui'
 class Player
   attr_reader :player_move
   attr_reader :name, :icon

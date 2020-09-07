@@ -1,6 +1,6 @@
-require_relative '..\lib\player.rb'
-require_relative '..\lib\game.rb'
-require_relative '..\lib\board.rb'
+require_relative '../lib/player'
+require_relative '../lib/game'
+require_relative '../lib/board'
 
 def create_player(player_symbol)
   print "Player who wish to choose #{player_symbol}:"
@@ -8,7 +8,6 @@ def create_player(player_symbol)
   Player.new(name, player_symbol)
 end
 
-#Instantiate objects:
 def initiate_environment
   player_1 = create_player("X")
   player_2 = create_player("O")

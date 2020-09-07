@@ -1,4 +1,4 @@
-require_relative '..\lib\module_ui.rb'
+require_relative '../lib/module_ui.rb'
 class Board
   attr_accessor :environ
   def initialize(environ)
